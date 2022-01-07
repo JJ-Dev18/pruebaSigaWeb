@@ -24,7 +24,7 @@ export const Dashboard = () => {
                                   </div>
                                   <div className="col-4 text-right">
                                       <span>
-                                          12.5%{" "}
+                                          12.5%
                                           <i className="fa fa-arrow-up"></i>
                                       </span>
                                   </div>
@@ -57,7 +57,7 @@ export const Dashboard = () => {
                               </div>
                               <div className="mb-4">
                                   <h5 className="card-title mb-0">
-                                      Citas Psicologo
+                                      Citas 
                                   </h5>
                               </div>
                               <div className="row align-items-center mb-2 d-flex">
@@ -68,8 +68,7 @@ export const Dashboard = () => {
                                   </div>
                                   <div className="col-4 text-right">
                                       <span>
-                                          9.23%{" "}
-                                          <i className="fa fa-arrow-up"></i>
+                                          9.2%<i className="fa fa-arrow-up"></i>
                                       </span>
                                   </div>
                               </div>
@@ -147,7 +146,7 @@ export const Dashboard = () => {
                                   </div>
                                   <div className="col-4 text-right">
                                       <span>
-                                          2.5%{" "}
+                                          2.5%
                                           <i className="fa fa-arrow-up"></i>
                                       </span>
                                   </div>
