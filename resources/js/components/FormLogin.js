@@ -1,17 +1,33 @@
+import axios from 'axios';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { useForm } from '../hooks/useForm';
 
-const  FormLogin = () => {
+const  FormLogin = ({setState}) => {
      
     const [ formValues,handleInputChange,reset] = useForm({
-        usuario : '',
-        contrasena : ''
+        email : '',
+        password : ''
     })
-    const { usuario, contrasena} = formValues;
-    const login = (e)=> {
+   
+    const { email, password} = formValues;
+    const login = async (e)=> {
      e.preventDefault();
-     console.log(usuario,contrasena)
+      try {
+          const res = await axios.post(
+              "http://localhost:80/gestionCitas/public/api/login",
+              {
+                  email,
+                  password,
+              }
+              );
+              console.log(res)
+          if (res.data) {
+              localStorage.setItem("token", res.data.access_token);
+          }
+      } catch (error) {
+          console.log(error);
+      }
     }
     return (
         <>
@@ -35,8 +51,8 @@ const  FormLogin = () => {
                                     type="text"
                                     className="form-control"
                                     placeholder="Correo"
-                                    name="usuario"
-                                    value={usuario}
+                                    name="email"
+                                    value={email}
                                     onChange={handleInputChange}
                                 />
                             </div>
@@ -46,8 +62,8 @@ const  FormLogin = () => {
                                     type="password"
                                     className="form-control"
                                     placeholder="Contrasena"
-                                     name="contrasena"
-                                    value={contrasena}
+                                     name="password"
+                                    value={password}
                                     onChange={handleInputChange}
                                 />
                             </div>
@@ -56,8 +72,9 @@ const  FormLogin = () => {
                                 Iniciar Sesion
                             </button>
                             <button
-                                type="submit"
+                                
                                 className="btn btn-secondary mt-3 mr-4 "
+                                onClick={()=> setState(true)}
                             >
                                 Registrarse
                             </button>
