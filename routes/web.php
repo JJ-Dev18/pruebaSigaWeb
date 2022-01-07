@@ -18,5 +18,14 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', function () {
     return view('login');
 });
-Route::get('/dashboard', [DashboardController::class, 'loggeado']);
+Route::get('/dashboard', function(){
+    return view('login');
+});
+Route::get('/dashboard/edit', function(){
+    return view('login');
+});
+// Route::get('/login', function(){
+//     return view('login');
+// });
+// Route::get('/dashboard', [DashboardController::class, 'loggeado'])->name('dashboard');;
 

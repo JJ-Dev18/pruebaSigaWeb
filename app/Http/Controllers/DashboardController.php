@@ -9,8 +9,8 @@ class DashboardController extends Controller
 {
     //
     public function loggeado(){
-        if(Auth::guest()){
-            return redirect()->route('/');
+        if(Auth::guess()){
+            return route('/');
         }
 
         return view('dashboard');

@@ -1,10 +1,12 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect,useContext} from 'react'
 import ReactDOM from 'react-dom';
+import { AuthContext } from '../auth/AuthContext';
 import FormLogin from '../components/FormLogin'
 import FormRegister from '../components/FormRegister'
 
 export default function Login() {
   const [state, setState] = useState(false)
+  // const { user } = useContext(AuthContext)
   
   return (
     <>
@@ -15,13 +17,10 @@ export default function Login() {
 
                     <p>Gestion de citas </p>
                 </div>
-            </div>
+     </div>
       {
         state ? <FormRegister setState={setState}/> : <FormLogin setState={setState}/>
       }
     </>
   )
-}
-if (document.getElementById("login")) {
-    ReactDOM.render(<Login />, document.getElementById("login"));
 }
