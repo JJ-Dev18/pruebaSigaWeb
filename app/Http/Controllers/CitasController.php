@@ -40,6 +40,7 @@ class CitasController extends Controller
     }
     public function create(Request $request){
        $cita = Citas::create([
+        'motivo'=> $request->motivo,
         'status'=> 1,       
         'fecha'=>$request->fecha,
         'hora'=>$request->hora,

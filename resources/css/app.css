@@ -3,6 +3,12 @@ body {
     width: 100vw;
     height: 100vh;
 }
+.container-create{
+    border: 1px solid gray;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 450px;
+    padding: 20px;
+}
 .card {
     background-color: #fff;
     border-radius: 10px;

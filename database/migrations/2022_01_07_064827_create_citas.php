@@ -17,6 +17,7 @@ class CreateCitas extends Migration
             $table->engine = 'InnoDB';
             $table->id();
             $table->integer('status');
+            $table->string('motivo',200);
             $table->string('observacion',300);
             $table->date('fecha');
             $table->time('hora');

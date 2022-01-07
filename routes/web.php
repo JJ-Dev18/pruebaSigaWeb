@@ -24,6 +24,12 @@ Route::get('/dashboard', function(){
 Route::get('/dashboard/edit', function(){
     return view('login');
 });
+Route::get('/dashboard/createCita', function(){
+    return view('login');
+});
+Route::get('/dashboard/citas', function(){
+    return view('login');
+});
 // Route::get('/login', function(){
 //     return view('login');
 // });
